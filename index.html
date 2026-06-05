@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>リブネクサス株式会社｜食品卸・水産卸・商社機能で商流をつなぐ</title>
+<meta name="description" content="リブネクサス株式会社は、旧三河屋物産と旧ヤマツ水産卸株式会社の機能を受け継ぎ、食品卸・水産卸を中心に、産地・商品・取引先・消費者をつなぐ商社機能を担う企業です。" />
+<meta name="keywords" content="リブネクサス, 食品卸, 水産卸, 三河屋物産, ヤマツ水産卸, 豊橋魚市場, 商社, 業務用食材, 愛知県小牧市" />
+<meta name="theme-color" content="#EAF3FB" />
+<meta property="og:title" content="リブネクサス株式会社｜つなぐ力で、商流を進化させる。" />
+<meta property="og:description" content="食品卸・水産卸を核に、産地・商品・取引先・消費者をつなぐ次世代の商社機能。Connecting Markets. Creating New Value." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:  '#EFF5FB',
+          ink:    '#0B2440',
+          slate:  '#3C4D63',
+          muted:  '#5A6B82',
+          line:   '#DCE7F2',
+          sky:    { DEFAULT:'#0EA5E9', soft:'#7DD3FC', deep:'#0369A1' },
+          ocean:  '#2563EB',
+          teal:   '#0D9488',
+          green:  '#16A34A',
+          sun:    '#F59E0B',
+          navy:   '#0B2440',
+        },
+        fontFamily: {
+          sans:  ['Inter','Noto Sans JP','sans-serif'],
+          jp:    ['Noto Sans JP','sans-serif'],
+          mincho:['Shippori Mincho','serif'],
+        },
+        maxWidth: { content: '1200px' },
+        keyframes: {
+          'gradient-x': { '0%,100%':{ backgroundPosition:'0% 50%' }, '50%':{ backgroundPosition:'100% 50%' } },
+          marquee: { '0%':{ transform:'translateX(0)' }, '100%':{ transform:'translateX(-50%)' } },
+          float: { '0%,100%':{ transform:'translateY(0)' }, '50%':{ transform:'translateY(-10px)' } },
+        },
+        animation: {
+          'gradient-x':'gradient-x 6s ease infinite',
+          marquee:'marquee 30s linear infinite',
+          float:'float 6s ease-in-out infinite',
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#EFF5FB; color:#3C4D63; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#0EA5E9; color:#fff; }
+
+  /* ===== 昼の空グラデーション ===== */
+  .bg-daysky{
+    background:
+      radial-gradient(900px 480px at 88% -8%, rgba(245,158,11,.20), transparent 60%),   /* 太陽の光 */
+      radial-gradient(1200px 700px at 12% -12%, rgba(14,165,233,.20), transparent 60%),  /* 空の青 */
+      radial-gradient(1000px 600px at 70% 110%, rgba(13,148,136,.12), transparent 60%),  /* 海の緑青 */
+      linear-gradient(180deg,#DCEEFB 0%, #EAF3FB 42%, #F4F9FE 100%);
+  }
+  .grid-overlay{
+    background-image:
+      linear-gradient(rgba(11,36,64,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,36,64,.045) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(1100px 700px at 50% 30%, #000 35%, transparent 80%);
+    mask-image:radial-gradient(1100px 700px at 50% 30%, #000 35%, transparent 80%);
+  }
+  @keyframes gradient-x { 0%,100%{ background-position:0% 50% } 50%{ background-position:100% 50% } }
+  @keyframes marqueeKf { 0%{ transform:translateX(0) } 100%{ transform:translateX(-50%) } }
+  @keyframes floatKf { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-10px) } }
+  @keyframes sunpulse { 0%,100%{ opacity:.55; transform:scale(1) } 50%{ opacity:.85; transform:scale(1.06) } }
+  @keyframes moteRise { 0%{ transform:translateY(20px); opacity:0 } 15%{ opacity:.8 } 100%{ transform:translateY(-120px); opacity:0 } }
+  @keyframes shimmer { 0%{ background-position:-200% 0 } 100%{ background-position:200% 0 } }
+  @keyframes spinSlow { to { transform:rotate(360deg) } }
+  .animate-float{ animation:floatKf 6s ease-in-out infinite; }
+  .animate-marquee{ animation:marqueeKf 30s linear infinite; }
+  .marquee-mask{ -webkit-mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+
+  /* 太陽グロー */
+  .sun-glow{ position:absolute; border-radius:9999px;
+    background:radial-gradient(circle, rgba(255,221,140,.9), rgba(245,158,11,.35) 45%, transparent 70%);
+    animation:sunpulse 5s ease-in-out infinite; filter:blur(2px); }
+
+  /* 陽光のチリ（モート） */
+  .mote{ position:absolute; width:6px; height:6px; border-radius:9999px; background:radial-gradient(circle, rgba(255,255,255,.95), rgba(255,221,140,.5) 60%, transparent 70%); animation:moteRise linear infinite; }
+
+  /* テキストグラデーション（空×海） */
+  .text-grad{
+    background:linear-gradient(115deg,#0284C7 0%, #0EA5E9 40%, #0D9488 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .text-grad-anim{ animation:gradient-x 6s ease infinite; }
+  .text-grad-sea{ background:linear-gradient(120deg,#0EA5E9, #2563EB); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .text-grad-earth{ background:linear-gradient(120deg,#16A34A, #0D9488); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .hairline{ border:1px solid #DCE7F2; }
+  .card{
+    background:#FFFFFF;
+    border:1px solid #E3ECF5;
+    box-shadow:0 1px 2px rgba(11,36,64,.04), 0 12px 30px -22px rgba(11,36,64,.25);
+  }
+  .glass-head{ background:rgba(255,255,255,.72); backdrop-filter:blur(12px) saturate(160%); border-bottom:1px solid #E3ECF5; }
+  .glow-sky{ box-shadow:0 0 0 1px rgba(14,165,233,.18), 0 26px 60px -30px rgba(14,165,233,.55); }
+
+  .btn-primary{
+    position:relative; overflow:hidden;
+    background:linear-gradient(120deg,#0EA5E9,#2563EB); color:#fff; font-weight:700;
+    box-shadow:0 14px 34px -14px rgba(37,99,235,.6);
+    transition:filter .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary:hover{ filter:brightness(1.05); transform:translateY(-2px); box-shadow:0 20px 44px -16px rgba(37,99,235,.7); }
+  .btn-primary::after{ content:''; position:absolute; top:0; left:-120%; width:60%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent); transform:skewX(-18deg); transition:left .6s ease; }
+  .btn-primary:hover::after{ left:130%; }
+  .btn-ghost{ border:1px solid #CFE0F0; color:#0B2440; background:rgba(255,255,255,.6); transition:border-color .2s ease, color .2s ease, background .2s ease, transform .2s ease; }
+  .btn-ghost:hover{ border-color:#0EA5E9; color:#0284C7; background:#fff; transform:translateY(-2px); }
+
+  .lift{ transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s ease, box-shadow .35s ease; }
+  .lift:hover{ transform:translateY(-7px); border-color:rgba(14,165,233,.5); box-shadow:0 30px 60px -28px rgba(14,165,233,.45); }
+
+  .eyebrow{ letter-spacing:.24em; }
+  .watermark{
+    font-family:'Inter',sans-serif; font-weight:900; letter-spacing:.04em;
+    background:linear-gradient(180deg, rgba(14,165,233,.16), rgba(14,165,233,.03));
+    -webkit-background-clip:text; background-clip:text; color:transparent; user-select:none; pointer-events:none;
+  }
+  .nav-link{ position:relative; color:#3C4D63; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:linear-gradient(90deg,#0EA5E9,#2563EB); transition:width .3s ease; border-radius:2px; }
+  .nav-link:hover{ color:#0B2440; }
+  .nav-link:hover::after{ width:100%; }
+
+  /* セクション間の流れる仕切り線 */
+  .flowline{ height:2px; background:linear-gradient(90deg, transparent, #0EA5E9, #2563EB, #0D9488, transparent); background-size:200% 100%; animation:gradient-x 7s ease infinite; opacity:.5; }
+
+  /* 商流フロー（産地→商品→取引先→消費者）の連鎖点灯 */
+  @keyframes tfChase{ 0%,22%,100%{ border-color:#DCE7F2; color:#5A6B82; transform:translateY(0); box-shadow:none } 8%{ border-color:#0EA5E9; color:#0369A1; transform:translateY(-3px); box-shadow:0 8px 20px -8px rgba(14,165,233,.55) } }
+  @keyframes arrowPulse{ 0%,30%,100%{ color:#9AAAC0; transform:scale(1) } 10%{ color:#0EA5E9; transform:scale(1.25) } }
+  .tradeflow .tf-step{ border:1px solid #DCE7F2; color:#5A6B82; animation:tfChase 4s ease-in-out infinite; }
+  .tradeflow .tf-arrow{ display:inline-block; color:#9AAAC0; animation:arrowPulse 4s ease-in-out infinite; }
+
+  /* スクロール演出 */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal[data-d="1"]{ transition-delay:.08s } .reveal[data-d="2"]{ transition-delay:.16s }
+  .reveal[data-d="3"]{ transition-delay:.24s } .reveal[data-d="4"]{ transition-delay:.32s }
+  /* 横スライド変種 */
+  .reveal-l{ opacity:0; transform:translateX(-32px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal-l.in{ opacity:1; transform:none; }
+  .reveal-r{ opacity:0; transform:translateX(32px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal-r.in{ opacity:1; transform:none; }
+
+  /* タイムライン進捗 */
+  .tl-fill{ width:0; transition:width 1.6s cubic-bezier(.4,0,.2,1); }
+  .tl-fill.in{ width:100%; }
+
+  .chip{ font-size:11px; padding:6px 11px; border-radius:9px; color:#3C4D63; background:#F1F6FC; border:1px solid #E3ECF5; }
+  .lbl{ display:block; font-size:12px; color:#6B7C92; margin-bottom:7px; }
+  .req{ font-size:9px; color:#fff; background:#0EA5E9; padding:1px 6px; border-radius:5px; margin-left:4px; vertical-align:middle; }
+  .inp{ width:100%; background:#F7FAFE; border:1px solid #DCE7F2; border-radius:12px; padding:12px 14px; color:#0B2440; font-size:14px; outline:none; transition:border-color .2s, box-shadow .2s, background .2s; }
+  .inp::placeholder{ color:#9AAAC0; }
+  .inp:focus{ border-color:#0EA5E9; background:#fff; box-shadow:0 0 0 3px rgba(14,165,233,.14); }
+  select.inp{ appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%236B7C92' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:40px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .reveal,.reveal-l,.reveal-r{ opacity:1 !important; transform:none !important; }
+    .tl-fill{ width:100% !important; }
+    .animate-float,.animate-marquee,.sun-glow,.mote,.flowline,.text-grad-anim,.tradeflow .tf-step,.tradeflow .tf-arrow{ animation:none !important; }
+    .btn-primary::after{ display:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body class="font-jp antialiased">
+
+<!-- ===== HEADER ===== -->
+<header id="hdr" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="#top" class="flex items-center leading-none">
+        <span>
+          <span class="block font-extrabold tracking-wide text-ink text-[15px] md:text-base">リブネクサス株式会社</span>
+          <span class="block text-[10px] tracking-[.28em] text-muted font-sans mt-0.5">LIV nexus</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#business">Business</a>
+        <a class="nav-link" href="#strength">Strength</a>
+        <a class="nav-link" href="#vision">Vision</a>
+        <a class="nav-link" href="#company">Company</a>
+        <a href="#contact" class="ml-1 px-4 py-2 rounded-full btn-primary text-[13px]">お問い合わせ</a>
+      </nav>
+
+      <button id="burger" class="lg:hidden grid place-items-center w-10 h-10 rounded-lg hairline bg-white/70" aria-label="メニュー">
+        <span class="block w-5 space-y-[5px]">
+          <span class="block h-[2px] bg-ink rounded"></span>
+          <span class="block h-[2px] bg-ink rounded"></span>
+          <span class="block h-[2px] bg-ink rounded"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div id="drawer" class="lg:hidden fixed inset-0 z-50 pointer-events-none">
+    <div id="scrim" class="absolute inset-0 bg-ink/30 opacity-0 transition-opacity duration-300"></div>
+    <nav class="absolute right-0 top-0 h-full w-[78%] max-w-[320px] bg-white border-l border-line translate-x-full transition-transform duration-300 p-7 flex flex-col gap-1" id="panel">
+      <div class="flex items-center justify-between mb-6">
+        <span class="text-[11px] tracking-[.28em] text-muted font-sans">MENU</span>
+        <button id="closeBtn" class="w-9 h-9 grid place-items-center rounded-lg hairline text-ink">✕</button>
+      </div>
+      <a class="drawer-link py-3 border-b border-line text-ink" href="#about">About<span class="block text-[10px] tracking-widest text-muted">リブネクサスについて</span></a>
+      <a class="drawer-link py-3 border-b border-line text-ink" href="#business">Business<span class="block text-[10px] tracking-widest text-muted">事業内容</span></a>
+      <a class="drawer-link py-3 border-b border-line text-ink" href="#strength">Strength<span class="block text-[10px] tracking-widest text-muted">私たちの強み</span></a>
+      <a class="drawer-link py-3 border-b border-line text-ink" href="#vision">Vision<span class="block text-[10px] tracking-widest text-muted">成長ビジョン</span></a>
+      <a class="drawer-link py-3 border-b border-line text-ink" href="#company">Company<span class="block text-[10px] tracking-widest text-muted">会社情報</span></a>
+      <a class="drawer-link mt-5 text-center py-3 rounded-full btn-primary" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="relative min-h-[100svh] flex items-center overflow-hidden bg-daysky">
+  <span class="sun-glow w-[420px] h-[420px] -top-24 -right-24" aria-hidden="true"></span>
+  <canvas id="net" class="absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
+  <div class="absolute inset-0 grid-overlay" aria-hidden="true"></div>
+  <div id="motes" class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-[20%] flex justify-center" aria-hidden="true">
+    <span class="watermark text-[24vw] md:text-[20vw] leading-none">NEXUS</span>
+  </div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-paper"></div>
+
+  <div class="relative mx-auto max-w-content px-5 md:px-8 w-full pt-24">
+    <div class="reveal in max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 hairline text-[11px] tracking-[.2em] text-sky-deep mb-7 animate-float shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-green animate-pulse"></span>
+        食品卸 ・ 水産卸 ・ 商社機能
+      </div>
+      <h1 class="font-jp font-black text-ink leading-[1.12] text-[clamp(2.2rem,9vw,3rem)] sm:text-6xl md:text-7xl tracking-tight">
+        つなぐ力で、<br/><span class="text-grad text-grad-anim">商流を進化させる。</span>
+      </h1>
+      <p class="mt-7 text-slate text-base md:text-lg leading-relaxed max-w-2xl">
+        食品卸（三河屋物産）と水産卸（ヤマツ水産卸）。性格の異なる二つの現場の機能を受け継ぎ、
+        グループの調達網と販路で多様な商材をつなぐ——愛知から、商いの形を更新する商社です。
+      </p>
+      <p class="mt-4 font-sans text-[13px] md:text-sm tracking-[.18em] text-sky-deep font-medium">
+        Connecting Markets. Creating New Value.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="#business" class="px-6 py-3.5 rounded-full btn-primary text-sm">事業内容を見る</a>
+        <a href="#company" class="px-6 py-3.5 rounded-full btn-ghost text-sm">会社情報を見る</a>
+        <a href="#contact" class="px-6 py-3.5 rounded-full btn-ghost text-sm">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted">
+    <span class="font-sans text-[10px] tracking-[.3em]">SCROLL</span>
+    <span class="w-px h-10 bg-gradient-to-b from-sky to-transparent"></span>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="relative py-28 md:py-36 bg-white">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-5 reveal-l">
+        <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">ABOUT&nbsp;US</p>
+        <h2 class="font-jp font-black text-ink text-3xl md:text-[42px] leading-[1.25]">
+          地域の商流を、<br/><span class="text-grad-sea">次の成長ステージへ。</span>
+        </h2>
+        <div class="mt-8 flex items-center gap-4">
+          <span class="font-sans text-5xl font-extrabold text-grad text-grad-anim" data-count="2">0</span>
+          <span class="text-sm text-muted leading-snug">機能を受け継いだ<br/>2つの中核カンパニー</span>
+        </div>
+      </div>
+      <div class="lg:col-span-7 reveal-r" data-d="1">
+        <p class="text-slate text-[15px] md:text-base leading-[2]">
+          リブネクサス株式会社は、旧三河屋物産と旧ヤマツ水産卸株式会社の機能を受け継ぎ、食品卸・水産卸を中心とした商社機能を担う企業です。
+          私たちは、産地・市場・メーカー・販売先・消費者をつなぐ<span class="text-ink font-semibold">結節点（NEXUS）</span>として、安定供給、調達力、営業力、提案力を磨きながら、地域から全国へ、商いの領域を着実に広げていきます。
+        </p>
+        <p class="mt-6 text-muted text-[15px] md:text-base leading-[2]">
+          さらに、タナカ産業・アートナップ・三河屋などグループ各社との連携を通じて、食品・水産にとどまらない多様な商材を扱う総合商社機能へと進化していきます。M&Aや新規事業展開も成長の選択肢です。
+        </p>
+        <div class="mt-9 grid sm:grid-cols-3 gap-3">
+          <div class="card rounded-2xl p-5 lift"><p class="font-sans text-2xl font-bold text-ink">調達</p><p class="text-xs text-muted mt-1">産地・市場・メーカー</p></div>
+          <div class="card rounded-2xl p-5 lift"><p class="font-sans text-2xl font-bold text-ink">提案</p><p class="text-xs text-muted mt-1">用途・販売先に最適化</p></div>
+          <div class="card rounded-2xl p-5 lift"><p class="font-sans text-2xl font-bold text-ink">流通</p><p class="text-xs text-muted mt-1">食品 × 水産の二軸</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-content px-5 md:px-8"><div class="flowline rounded-full"></div></div>
+
+<!-- ===== BUSINESS ===== -->
+<section id="business" class="relative py-28 md:py-36 bg-paper">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">BUSINESS</p>
+      <h2 class="font-jp font-black text-ink text-3xl md:text-[44px] leading-tight">事業内容</h2>
+      <p class="mt-5 text-muted text-sm md:text-base">2つの事業の柱が、食と水産の商流を支えます。</p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-2 gap-5">
+      <!-- 三河屋物産 -->
+      <article class="reveal-l group relative rounded-3xl card p-8 md:p-10 overflow-hidden lift">
+        <div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-green/10 blur-3xl"></div>
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full text-[11px] tracking-widest text-green bg-green/10 border border-green/20 font-sans">COMPANY 01</span>
+            <span class="font-sans text-green/25 text-5xl font-black">食</span>
+          </div>
+          <h3 class="mt-6 font-jp font-black text-2xl text-ink">三河屋物産カンパニー</h3>
+          <p class="mt-2 text-grad-earth font-bold text-[15px]">業務用食材卸の基盤を活かし、食の現場を支える。</p>
+          <p class="mt-5 text-slate text-sm leading-[1.95]">
+            業者向けB2B食品卸を中心に、外食産業、給食、食品加工、小売など、幅広いお客様へ食材を供給します。地域に根差した営業力と、安定した調達・供給体制を強みに、食の現場に必要な商品を的確に届けます。
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="chip">業務用食材</span><span class="chip">加工食品</span><span class="chip">冷凍食品</span>
+            <span class="chip">調味料</span><span class="chip">外食・給食向け</span><span class="chip">小売向け食品</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ヤマツ水産卸 -->
+      <article class="reveal-r group relative rounded-3xl card p-8 md:p-10 overflow-hidden lift" data-d="1">
+        <div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-sky/10 blur-3xl"></div>
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full text-[11px] tracking-widest text-sky-deep bg-sky/10 border border-sky/20 font-sans">COMPANY 02</span>
+            <span class="font-sans text-sky/25 text-5xl font-black">水</span>
+          </div>
+          <h3 class="mt-6 font-jp font-black text-2xl text-ink">ヤマツ水産卸カンパニー</h3>
+          <p class="mt-2 text-grad-sea font-bold text-[15px]">豊橋魚市場を拠点に、水産流通の可能性を広げる。</p>
+          <p class="mt-5 text-slate text-sm leading-[1.95]">
+            豊橋魚市場を拠点に、水産品を中心とした卸売事業を展開します。鮮魚、冷凍水産品、加工水産品などを通じて、産地、市場、販売先をつなぎ、より価値ある水産流通を実現します。
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="chip">鮮魚</span><span class="chip">冷凍水産品</span><span class="chip">加工水産品</span>
+            <span class="chip">市場流通</span><span class="chip">外食・量販向け</span><span class="chip">水産関連商材</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 商社機能 -->
+    <article class="reveal mt-5 relative rounded-3xl overflow-hidden p-8 md:p-12 glow-sky card">
+      <div class="absolute inset-0 opacity-70 bg-[radial-gradient(700px_220px_at_85%_0%,rgba(14,165,233,.12),transparent_70%)]"></div>
+      <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8">
+          <span class="px-3 py-1 rounded-full text-[11px] tracking-widest text-sky-deep bg-sky/10 border border-sky/20 font-sans">TRADING BUSINESS</span>
+          <h3 class="mt-5 font-jp font-black text-2xl md:text-3xl text-ink">食品にとどまらない、グループ連携の商社機能へ。</h3>
+          <p class="mt-4 text-slate text-sm md:text-[15px] leading-[1.95] max-w-2xl">
+            魚を運ぶ一台のトラックに、その箱（タナカ産業）も、店頭に並ぶ生活雑貨（アートナップ）も載せられる。グループだから、別々に発注していたものが一本の商流にまとまります。取引先の課題、産地の可能性、商品の価値、消費者のニーズをつなぎ、新しいビジネスモデルの創出を目指します。
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex lg:justify-end">
+          <div class="tradeflow flex items-center gap-2 font-sans text-xs">
+            <span class="tf-step px-3 py-2 rounded-lg bg-white" style="animation-delay:0s">産地</span>
+            <span class="tf-arrow" style="animation-delay:.5s">→</span>
+            <span class="tf-step px-3 py-2 rounded-lg bg-white" style="animation-delay:1s">商品</span>
+            <span class="tf-arrow" style="animation-delay:1.5s">→</span>
+            <span class="tf-step px-3 py-2 rounded-lg bg-white" style="animation-delay:2s">取引先</span>
+            <span class="tf-arrow" style="animation-delay:2.5s">→</span>
+            <span class="px-3 py-2 rounded-lg btn-primary" style="animation-delay:3s">消費者</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- グループ連携 -->
+    <div class="reveal mt-14">
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-7">
+        <div>
+          <p class="eyebrow font-sans text-[11px] text-sky-deep mb-3">GROUP NETWORK</p>
+          <h3 class="font-jp font-black text-ink text-2xl md:text-3xl">グループ連携で、商材の幅を広げる。</h3>
+        </div>
+        <p class="text-muted text-sm max-w-md">
+          1社では揃わない品揃えを、グループ横断の調達で。食品・水産から包装・生活用品まで、発注も納品も一本にまとめます。
+        </p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="https://www.biglive.jp/" target="_blank" rel="noopener noreferrer" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">三</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">株式会社三河屋</p><p class="text-xs text-muted mt-1.5 leading-relaxed">スーパーマーケットチェーン運営</p></a>
+        <a href="https://www.artnap.co.jp/" target="_blank" rel="noopener noreferrer" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">ア</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">アートナップ株式会社</p><p class="text-xs text-muted mt-1.5 leading-relaxed">紙製食器・生活用品の製造販売</p></a>
+        <a href="https://www.tnk-tanaka.co.jp/" target="_blank" rel="noopener noreferrer" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">タ</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">タナカ産業株式会社</p><p class="text-xs text-muted mt-1.5 leading-relaxed">パッケージ・包装資材メーカー</p></a>
+        <a href="https://www.web-yamada.co.jp/" target="_blank" rel="noopener noreferrer" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">ヤ</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">株式会社ヤマダ</p><p class="text-xs text-muted mt-1.5 leading-relaxed">アパレル物流・肌着卸</p></a>
+        <a href="https://rouxcurryhonpo.com/" target="_blank" rel="noopener noreferrer" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">ロ</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">株式会社ロークスカレー本舗</p><p class="text-xs text-muted mt-1.5 leading-relaxed">業務用カレー・調味料の製造</p></a>
+        <a href="#" class="card rounded-2xl p-6 lift group/card block"><div class="flex items-start justify-between"><span class="grid place-items-center w-11 h-11 rounded-xl bg-sky/10 border border-sky/20 text-sky-deep font-jp font-black">リ</span><svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover/card:text-sky-deep transition" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div><p class="font-jp font-bold text-ink mt-5">リブリンク株式会社</p><p class="text-xs text-muted mt-1.5 leading-relaxed">グループ事業会社</p></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 取扱商材マーキー -->
+  <div class="reveal mt-14 marquee-mask overflow-hidden" data-d="1">
+    <div class="flex w-max animate-marquee whitespace-nowrap">
+      <span class="flex items-center text-lg md:text-2xl font-jp font-bold text-ink/30"><span class="px-7">食品</span><span class="text-sky/50">◆</span><span class="px-7">水産</span><span class="text-sky/50">◆</span><span class="px-7">業務用食材</span><span class="text-sky/50">◆</span><span class="px-7">冷凍・加工品</span><span class="text-sky/50">◆</span><span class="px-7">調味料</span><span class="text-sky/50">◆</span><span class="px-7">包装資材</span><span class="text-sky/50">◆</span><span class="px-7">保存用品</span><span class="text-sky/50">◆</span><span class="px-7">生活用品</span><span class="text-sky/50">◆</span><span class="px-7">雑貨</span><span class="text-sky/50">◆</span><span class="px-7">産業資材</span><span class="text-sky/50">◆</span><span class="px-7">各種商材</span><span class="text-sky/50">◆</span></span>
+      <span class="flex items-center text-lg md:text-2xl font-jp font-bold text-ink/30"><span class="px-7">食品</span><span class="text-sky/50">◆</span><span class="px-7">水産</span><span class="text-sky/50">◆</span><span class="px-7">業務用食材</span><span class="text-sky/50">◆</span><span class="px-7">冷凍・加工品</span><span class="text-sky/50">◆</span><span class="px-7">調味料</span><span class="text-sky/50">◆</span><span class="px-7">包装資材</span><span class="text-sky/50">◆</span><span class="px-7">保存用品</span><span class="text-sky/50">◆</span><span class="px-7">生活用品</span><span class="text-sky/50">◆</span><span class="px-7">雑貨</span><span class="text-sky/50">◆</span><span class="px-7">産業資材</span><span class="text-sky/50">◆</span><span class="px-7">各種商材</span><span class="text-sky/50">◆</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTH ===== -->
+<section id="strength" class="relative py-28 md:py-36 bg-white">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">STRENGTH</p>
+      <h2 class="font-jp font-black text-ink text-3xl md:text-[44px] leading-tight">私たちの強み</h2>
+      <p class="mt-5 text-muted text-sm md:text-base">卸売の堅実さと、総合商社への成長性を支える4つの力。</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal card rounded-2xl p-7 lift">
+        <div class="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-sky/15 to-ocean/15 border border-sky/20 text-sky-deep">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h13l-2-3M21 17H8l2 3M3 7l5 5M21 17l-5-5"/></svg>
+        </div>
+        <p class="font-sans text-xs tracking-widest text-sky-deep mt-6 font-semibold">01</p>
+        <h3 class="font-jp font-bold text-lg text-ink mt-1">調達力</h3>
+        <p class="text-sm text-slate leading-[1.9] mt-3">豊橋魚市場の現場仕入れから業務用食材まで、地域・市場・メーカー・グループ各社の網で一括調達。</p>
+      </div>
+      <div class="reveal card rounded-2xl p-7 lift" data-d="1">
+        <div class="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-sky/15 to-ocean/15 border border-sky/20 text-sky-deep">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/></svg>
+        </div>
+        <p class="font-sans text-xs tracking-widest text-sky-deep mt-6 font-semibold">02</p>
+        <h3 class="font-jp font-bold text-lg text-ink mt-1">提案力</h3>
+        <p class="text-sm text-slate leading-[1.9] mt-3">「この用途なら何が売れるか」を、外食・給食・量販の現場目線で提案。</p>
+      </div>
+      <div class="reveal card rounded-2xl p-7 lift" data-d="2">
+        <div class="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-sky/15 to-ocean/15 border border-sky/20 text-sky-deep">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M5 6h14M5 6l7 12M19 6l-7 12"/></svg>
+        </div>
+        <p class="font-sans text-xs tracking-widest text-sky-deep mt-6 font-semibold">03</p>
+        <h3 class="font-jp font-bold text-lg text-ink mt-1">流通ネットワーク</h3>
+        <p class="text-sm text-slate leading-[1.9] mt-3">食品・水産にグループの包装資材・生活用品も載せ、一括納品で発注の手間を削減。</p>
+      </div>
+      <div class="reveal card rounded-2xl p-7 lift" data-d="3">
+        <div class="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-sky/15 to-ocean/15 border border-sky/20 text-sky-deep">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 17l5-5 4 4 8-9M21 7v5M21 7h-5"/></svg>
+        </div>
+        <p class="font-sans text-xs tracking-widest text-sky-deep mt-6 font-semibold">04</p>
+        <h3 class="font-jp font-bold text-lg text-ink mt-1">成長戦略</h3>
+        <p class="text-sm text-slate leading-[1.9] mt-3">承継・M&A・新規商材で、卸から総合商社機能へ拡張。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION ===== -->
+<section id="vision" class="relative py-28 md:py-36 overflow-hidden bg-paper">
+  <div class="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_0%,rgba(14,165,233,.12),transparent_60%)]"></div>
+  <span class="sun-glow w-[300px] h-[300px] top-8 right-[8%] opacity-70" aria-hidden="true"></span>
+  <div class="absolute inset-x-0 top-10 flex justify-center" aria-hidden="true"><span class="watermark text-[16vw] leading-none">CONNECT</span></div>
+  <div class="relative mx-auto max-w-content px-5 md:px-8">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">VISION</p>
+      <h2 class="font-jp font-black text-ink text-3xl md:text-[46px] leading-[1.2]">
+        地域の結節点から、<br/><span class="text-grad text-grad-anim">商いの次のステージへ。</span>
+      </h2>
+      <p class="mt-7 text-slate text-[15px] md:text-base leading-[2] max-w-2xl">
+        まずは地域の食と水産の商流を、止めない・絶やさない。その堅実さの上に、グループ連携で扱う商材を増やし、新たなパートナーシップで商いを太くしていきます。やがては全国、そしてその先へ——グループの成長を牽引する中核企業を目指します。
+      </p>
+    </div>
+
+    <!-- 成長ステップ -->
+    <div class="mt-16 reveal" data-d="1">
+      <div class="relative">
+        <div class="absolute left-0 right-0 top-[26px] h-[3px] bg-line rounded-full hidden md:block"></div>
+        <div class="tl-fill absolute left-0 top-[26px] h-[3px] rounded-full bg-gradient-to-r from-sky via-ocean to-teal hidden md:block"></div>
+        <ol class="grid md:grid-cols-4 gap-5">
+          <li class="relative">
+            <div class="flex md:block items-center gap-4">
+              <span class="relative z-10 grid place-items-center w-[54px] h-[54px] rounded-full bg-white border border-line text-sky-deep font-sans font-bold shadow-sm">01</span>
+              <div class="md:mt-5">
+                <p class="font-sans text-sky-deep text-xs tracking-[.2em]">LOCAL</p>
+                <p class="font-jp font-bold text-ink mt-1">地域</p>
+                <p class="text-xs text-muted mt-1.5 leading-relaxed">地元の食・水産の商流を確実に支える。</p>
+              </div>
+            </div>
+          </li>
+          <li class="relative">
+            <div class="flex md:block items-center gap-4">
+              <span class="relative z-10 grid place-items-center w-[54px] h-[54px] rounded-full bg-white border border-line text-ocean font-sans font-bold shadow-sm">02</span>
+              <div class="md:mt-5">
+                <p class="font-sans text-ocean text-xs tracking-[.2em]">REGIONAL</p>
+                <p class="font-jp font-bold text-ink mt-1">広域</p>
+                <p class="text-xs text-muted mt-1.5 leading-relaxed">調達網と販路を中部・近隣圏へ拡張。</p>
+              </div>
+            </div>
+          </li>
+          <li class="relative">
+            <div class="flex md:block items-center gap-4">
+              <span class="relative z-10 grid place-items-center w-[54px] h-[54px] rounded-full bg-white border border-line text-teal font-sans font-bold shadow-sm">03</span>
+              <div class="md:mt-5">
+                <p class="font-sans text-teal text-xs tracking-[.2em]">NATIONAL</p>
+                <p class="font-jp font-bold text-ink mt-1">全国</p>
+                <p class="text-xs text-muted mt-1.5 leading-relaxed">グループ連携と商材拡張で全国規模の商社機能へ。</p>
+              </div>
+            </div>
+          </li>
+          <li class="relative">
+            <div class="flex md:block items-center gap-4">
+              <span class="relative z-10 grid place-items-center w-[54px] h-[54px] rounded-full btn-primary font-sans font-bold">04</span>
+              <div class="md:mt-5">
+                <p class="font-sans text-sky-deep text-xs tracking-[.2em]">BEYOND</p>
+                <p class="font-jp font-bold text-ink mt-1">その先へ</p>
+                <p class="text-xs text-muted mt-1.5 leading-relaxed">やがては海外市場も視野に、商いの領域を広げる。</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY ===== -->
+<section id="company" class="relative py-28 md:py-36 bg-white">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4 reveal-l">
+        <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">COMPANY</p>
+        <h2 class="font-jp font-black text-ink text-3xl md:text-[42px] leading-tight">会社情報</h2>
+        <p class="mt-6 text-muted text-sm leading-[1.95]">2カンパニーの機能を受け継ぎ、グループの成長を担う中核企業です。</p>
+        <div class="mt-8 card rounded-2xl p-6">
+          <p class="font-sans text-xs tracking-widest text-muted">HEAD OFFICE</p>
+          <p class="mt-2 text-ink font-semibold leading-relaxed">〒485-0016<br/>愛知県小牧市間々原新田下新池987</p>
+          <a href="tel:0568-713201" class="mt-2 inline-block text-sky-deep font-sans font-medium">0568-713201</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 reveal-r" data-d="1">
+        <div class="rounded-2xl card overflow-hidden">
+          <dl class="divide-y divide-line text-sm">
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">会社名</dt><dd class="col-span-2 md:col-span-3 px-5 py-4 text-ink font-medium">リブネクサス株式会社<span class="text-muted font-sans ml-2 text-xs">LIV nexus Co., Ltd.</span></dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">本社所在地</dt><dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate">〒485-0016 愛知県小牧市間々原新田下新池987</dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">電話番号</dt><dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate font-sans">0568-713201</dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">設立</dt><dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate">2004年12月24日（平成16年12月24日）</dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">役員</dt>
+              <dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate leading-loose">
+                代表取締役会長　佐藤修滉（伸宏）<br/>
+                代表取締役社長　武藤嘉幸<br/>
+                取締役　川口英樹<br/>
+                取締役　伊藤政則
+              </dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">事業所</dt>
+              <dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate leading-loose">
+                本社：〒485-0016 愛知県小牧市間々原新田下新池987<br/>
+                ヤマツ水産卸カンパニー本部：〒440-0091 愛知県豊橋市下五井町捨田12-1
+              </dd></div>
+            <div class="grid grid-cols-3 md:grid-cols-4"><dt class="col-span-1 px-5 py-4 text-muted bg-paper/60">事業内容</dt><dd class="col-span-2 md:col-span-3 px-5 py-4 text-slate">食品卸／水産卸を核に、グループ各社と連携した商社機能（食品・水産・包装資材・生活用品・各種商材の調達・供給・卸売）</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="relative py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 bg-[linear-gradient(120deg,#0EA5E9,#2563EB_55%,#0D9488)]"></div>
+  <div class="absolute inset-0 grid-overlay opacity-30"></div>
+  <span class="sun-glow w-[360px] h-[360px] -top-20 right-[12%] opacity-60"></span>
+  <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
+  <div class="relative mx-auto max-w-content px-5 md:px-8 text-center reveal">
+    <p class="font-sans text-[11px] tracking-[.3em] text-white/80 mb-6">LET'S BUILD THE NEXT TRADE</p>
+    <h2 class="font-jp font-black text-white text-[clamp(2rem,7vw,3.75rem)] sm:text-5xl md:text-6xl leading-[1.15]">
+      新しい商流を、<span class="text-white/95">共につくる。</span>
+    </h2>
+    <p class="mt-7 text-white/85 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+      「こんな商材を、こんな量で」——その一言から、商流は動きます。仕入れも、提携も、まずはご相談ください。
+    </p>
+    <div class="mt-9 flex flex-wrap justify-center gap-3">
+      <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-ocean font-bold text-sm transition-all hover:translate-y-[-2px] hover:shadow-xl shadow-lg">
+        仕入れ・取引のご相談
+        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/40 text-white font-bold text-sm transition-all hover:bg-white/10 hover:translate-y-[-2px]">
+        事業提携・M&Aのご相談
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="relative py-28 md:py-36 bg-paper">
+  <div class="mx-auto max-w-content px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5 reveal-l">
+        <p class="eyebrow font-sans text-[11px] text-sky-deep mb-5">CONTACT</p>
+        <h2 class="font-jp font-black text-ink text-3xl md:text-[42px] leading-tight">お問い合わせ</h2>
+        <p class="mt-6 text-slate text-sm leading-[1.95]">
+          食品卸・水産卸・取扱商品、事業提携やM&A・協業のご相談まで、お気軽にお問い合わせください。担当者より折り返しご連絡いたします。
+        </p>
+        <div class="mt-8 space-y-3 text-sm">
+          <div class="flex items-center gap-3 text-slate"><span class="w-9 h-9 grid place-items-center rounded-lg hairline bg-white text-sky-deep" aria-hidden="true">☎</span><a href="tel:0568-713201" class="font-sans">0568-713201</a></div>
+          <div class="flex items-center gap-3 text-slate"><span class="w-9 h-9 grid place-items-center rounded-lg hairline bg-white text-sky-deep" aria-hidden="true">⌂</span>〒485-0016 愛知県小牧市間々原新田下新池987</div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal-r" data-d="1">
+        <form id="contactForm" class="card rounded-2xl p-7 md:p-9 grid sm:grid-cols-2 gap-5">
+          <div class="sm:col-span-1"><label class="lbl">会社名</label><input class="inp" type="text" name="company" placeholder="株式会社○○" /></div>
+          <div class="sm:col-span-1"><label class="lbl">お名前 <span class="req">必須</span></label><input class="inp" type="text" name="name" required placeholder="山田 太郎" /></div>
+          <div class="sm:col-span-1"><label class="lbl">メールアドレス <span class="req">必須</span></label><input class="inp" type="email" name="email" required placeholder="name@example.com" /></div>
+          <div class="sm:col-span-1"><label class="lbl">電話番号</label><input class="inp" type="tel" name="tel" placeholder="000-0000-0000" /></div>
+          <div class="sm:col-span-2"><label class="lbl">お問い合わせ種別</label>
+            <select class="inp" name="subject">
+              <option>食品卸について</option>
+              <option>水産卸について</option>
+              <option>仕入・取扱商品について</option>
+              <option>事業提携について</option>
+              <option>M&A・協業について</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2"><label class="lbl">お問い合わせ内容 <span class="req">必須</span></label><textarea class="inp min-h-[130px] resize-y" name="message" required placeholder="お問い合わせ内容をご記入ください。"></textarea></div>
+          <div class="sm:col-span-2 -mt-1">
+            <p class="text-[11px] text-muted leading-relaxed">ご入力いただいた個人情報は、お問い合わせへの対応の目的にのみ利用します。</p>
+          </div>
+          <div class="sm:col-span-2 flex items-center justify-between gap-4 flex-wrap">
+            <p id="formNote" class="text-xs text-muted">「送信する」を押すとメールソフトが起動し、入力内容が担当者宛に作成されます。</p>
+            <button type="submit" class="px-8 py-3.5 rounded-full btn-primary text-sm">送信する</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="relative bg-navy text-white/80">
+  <div class="mx-auto max-w-content px-5 md:px-8 py-14">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div>
+          <span class="block font-extrabold text-white text-lg">リブネクサス株式会社</span>
+          <span class="block text-[10px] tracking-[.28em] text-white/50 font-sans mt-1">LIV nexus Co., Ltd.</span>
+        </div>
+        <p class="mt-5 text-sm text-white/60 leading-relaxed max-w-sm">産地、商品、取引先、消費者をつなぎ、新しい商流を創る。食品卸・水産卸を核とした次世代の商社機能。</p>
+      </div>
+      <div class="md:col-span-3">
+        <p class="font-sans text-[11px] tracking-widest text-white/50 mb-4">SITE MAP</p>
+        <ul class="space-y-2.5 text-sm text-white/75">
+          <li><a class="hover:text-sky-soft transition" href="#about">About</a></li>
+          <li><a class="hover:text-sky-soft transition" href="#business">Business</a></li>
+          <li><a class="hover:text-sky-soft transition" href="#strength">Strength</a></li>
+          <li><a class="hover:text-sky-soft transition" href="#vision">Vision</a></li>
+          <li><a class="hover:text-sky-soft transition" href="#company">Company</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <p class="font-sans text-[11px] tracking-widest text-white/50 mb-4">CONTACT</p>
+        <p class="text-sm text-white/75 leading-relaxed">〒485-0016 愛知県小牧市間々原新田下新池987<br/><a href="tel:0568-713201" class="font-sans hover:text-sky-soft">0568-713201</a></p>
+        <a href="#contact" class="mt-5 inline-block px-5 py-2.5 rounded-full border border-white/20 hover:border-sky-soft hover:text-sky-soft text-xs text-white/80 transition">お問い合わせフォーム</a>
+      </div>
+    </div>
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+      <p class="font-sans">© 2026 LIV nexus Co., Ltd. All Rights Reserved.</p>
+      <p>三河屋物産カンパニー ／ ヤマツ水産卸カンパニー</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== ヘッダー：スクロールでガラス化 ===== */
+const hdr = document.getElementById('hdr');
+const onScroll = () => {
+  if (window.scrollY > 24) hdr.classList.add('glass-head','shadow-[0_8px_30px_-18px_rgba(11,36,64,.35)]');
+  else hdr.classList.remove('glass-head','shadow-[0_8px_30px_-18px_rgba(11,36,64,.35)]');
+};
+window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+/* ===== モバイルメニュー ===== */
+const drawer = document.getElementById('drawer');
+const scrim  = document.getElementById('scrim');
+const panel  = document.getElementById('panel');
+const openMenu = () => { drawer.classList.remove('pointer-events-none'); requestAnimationFrame(()=>{ scrim.classList.add('opacity-100'); panel.classList.remove('translate-x-full'); }); };
+const closeMenu = () => { scrim.classList.remove('opacity-100'); panel.classList.add('translate-x-full'); setTimeout(()=>drawer.classList.add('pointer-events-none'), 300); };
+document.getElementById('burger').addEventListener('click', openMenu);
+document.getElementById('closeBtn').addEventListener('click', closeMenu);
+scrim.addEventListener('click', closeMenu);
+document.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ===== スクロール・リビール（reveal / reveal-l / reveal-r / tl-fill） ===== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .tl-fill').forEach(el => io.observe(el));
+
+/* ===== 陽光のチリ（モート）生成 ===== */
+(function(){
+  const box = document.getElementById('motes');
+  if (!box) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const N = 14;
+  for (let i=0;i<N;i++){
+    const m = document.createElement('span');
+    m.className = 'mote';
+    const size = 3 + Math.random()*5;
+    m.style.width = m.style.height = size+'px';
+    m.style.left = (Math.random()*100)+'%';
+    m.style.bottom = (Math.random()*40)+'%';
+    m.style.animationDuration = (6 + Math.random()*7)+'s';
+    m.style.animationDelay = (-Math.random()*10)+'s';
+    box.appendChild(m);
+  }
+})();
+
+/* ===== フォーム送信（メールソフト起動でCONTACT_EMAIL宛に作成） ===== */
+const CONTACT_EMAIL = 'satou.nobuhiro.bhd@gmail.com';
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const v = (k) => (f.get(k) || '').toString();
+  const company = v('company'), name = v('name'), email = v('email'), tel = v('tel'), subject = v('subject'), message = v('message');
+  const mailSubject = `【お問い合わせ】${subject}${company ? ' / ' + company : ''} ${name}`;
+  const body = [
+    `お問い合わせ種別：${subject}`,
+    `会社名：${company}`,
+    `お名前：${name}`,
+    `メールアドレス：${email}`,
+    `電話番号：${tel}`,
+    '',
+    '■お問い合わせ内容',
+    message,
+  ].join('\n');
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
+  const note = document.getElementById('formNote');
+  note.textContent = 'メールソフトを起動しました。内容をご確認のうえ送信してください。担当者より折り返しご連絡いたします。';
+  note.classList.remove('text-muted'); note.classList.add('text-teal');
+  e.target.querySelector('button[type=submit]').textContent = 'メールを作成しました';
+});
+
+/* ===== 数値カウントアップ ===== */
+document.querySelectorAll('[data-count]').forEach((el) => {
+  const to = parseInt(el.getAttribute('data-count'), 10) || 0;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { el.textContent = to; return; }
+  const cio = new IntersectionObserver((ents) => {
+    ents.forEach((en) => {
+      if (!en.isIntersecting) return;
+      cio.unobserve(en.target);
+      let start = 0;
+      const run = (ts) => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1200, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(to * eased);
+        if (p < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+    });
+  }, { threshold: 0.6 });
+  cio.observe(el);
+});
+
+/* ===== ヒーロー：商流ネットワーク（昼／青のルート＋移動する荷） ===== */
+(function(){
+  const canvas = document.getElementById('net');
+  if (!canvas) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx = canvas.getContext('2d');
+  let w, h, dpr, nodes = [], pulses = [], raf, running = false;
+  const COLORS = ['rgba(14,165,233,', 'rgba(37,99,235,', 'rgba(13,148,136,'];
+  const mouse = { x:-9999, y:-9999 };
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w*dpr; canvas.height = h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const count = Math.max(26, Math.min(64, Math.floor(w*h/24000)));
+    nodes = Array.from({length:count}, () => ({
+      x: Math.random()*w, y: Math.random()*h,
+      vx:(Math.random()-.5)*0.22, vy:(Math.random()-.5)*0.22,
+      r: Math.random()*1.6 + 0.7,
+      c: COLORS[(Math.random()*COLORS.length)|0]
+    }));
+    // 移動する荷（パルス）
+    pulses = Array.from({length:7}, () => ({
+      a:(Math.random()*nodes.length)|0, b:(Math.random()*nodes.length)|0,
+      t:Math.random(), sp:0.0035 + Math.random()*0.004
+    }));
+  }
+  function step(){
+    ctx.clearRect(0,0,w,h);
+    // 線
+    for (let i=0;i<nodes.length;i++){
+      const n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x<0||n.x>w) n.vx*=-1;
+      if (n.y<0||n.y>h) n.vy*=-1;
+      for (let j=i+1;j<nodes.length;j++){
+        const m = nodes[j];
+        const dx=n.x-m.x, dy=n.y-m.y, d=Math.hypot(dx,dy);
+        if (d<140){
+          const a=(1-d/140)*0.32;
+          ctx.strokeStyle='rgba(37,99,235,'+a.toFixed(3)+')';
+          ctx.lineWidth=0.8;
+          ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.stroke();
+        }
+      }
+      const mdx=n.x-mouse.x, mdy=n.y-mouse.y, md=Math.hypot(mdx,mdy);
+      if (md<175){
+        const a=(1-md/175)*0.55;
+        ctx.strokeStyle='rgba(14,165,233,'+a.toFixed(3)+')';
+        ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke();
+        n.x-=mdx*0.004; n.y-=mdy*0.004;
+      }
+    }
+    // 移動する荷
+    for (const p of pulses){
+      const A=nodes[p.a], B=nodes[p.b];
+      if (!A||!B){ p.a=(Math.random()*nodes.length)|0; p.b=(Math.random()*nodes.length)|0; continue; }
+      p.t += p.sp;
+      if (p.t>=1){ p.t=0; p.a=p.b; p.b=(Math.random()*nodes.length)|0; }
+      const x=A.x+(B.x-A.x)*p.t, y=A.y+(B.y-A.y)*p.t;
+      ctx.beginPath(); ctx.fillStyle='rgba(245,158,11,0.85)'; ctx.arc(x,y,2.4,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle='rgba(245,158,11,0.18)'; ctx.arc(x,y,7,0,Math.PI*2); ctx.fill();
+    }
+    // 結節点
+    for (const n of nodes){
+      ctx.beginPath(); ctx.fillStyle=n.c+'0.9)'; ctx.arc(n.x,n.y,n.r,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle=n.c+'0.10)'; ctx.arc(n.x,n.y,n.r*4,0,Math.PI*2); ctx.fill();
+    }
+    if (running) raf = requestAnimationFrame(step);
+  }
+  function start(){ if (!running && !reduce){ running = true; raf = requestAnimationFrame(step); } }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+
+  resize();
+  if (reduce){ step(); } else { start(); }
+
+  // 画面外・タブ非表示では停止して負荷とバッテリーを節約
+  const vio = new IntersectionObserver((ents) => {
+    ents.forEach((e) => { if (e.isIntersecting) start(); else stop(); });
+  }, { threshold: 0 });
+  vio.observe(canvas);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+
+  window.addEventListener('resize', () => { stop(); resize(); if(!reduce) start(); });
+  if (!reduce){
+    window.addEventListener('mousemove', (e) => { const r=canvas.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; });
+    canvas.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
+  }
+})();
+</script>
+</body>
+</html>
