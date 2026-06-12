@@ -1,0 +1,29 @@
+# リブネクサス株式会社（LIV nexus Co., Ltd.）
+
+> 旧三河屋物産（業務用食品卸）と旧ヤマツ水産卸（豊橋魚市場拠点の水産卸）の機能を承継し、食品卸・水産卸を核にグループ各社と連携した商社機能（食品・水産・包装資材・生活用品・各種商材の調達・供給・卸売）を担う次世代商社。本社は愛知県小牧市。愛知・名古屋圏を中心に外食・給食・量販・小売の現場へ供給する。
+
+- 設立: 2004年12月24日
+- 本社: 〒485-0016 愛知県小牧市間々原新田下新池987（TEL 0568-713201）
+- 東京本社: 東京都杉並区阿佐谷南3-1-27
+- ヤマツ水産卸カンパニー本部: 愛知県豊橋市下五井町捨田12-1（豊橋魚市場拠点）
+- 事業: 三河屋物産カンパニー（業務用食材・加工食品・冷凍食品・調味料のB2B食品卸）／ヤマツ水産卸カンパニー（鮮魚・冷凍水産品・加工水産品の卸売）／グループ連携の商社機能
+- 所属: リブメーカーズグループ（https://livmakers.co.jp）
+
+## 主要ページ
+
+- [トップ（会社サイト・単一ページ構成）](https://livnexus.co.jp/): 全情報を1ページに集約
+- [リブネクサスについて](https://livnexus.co.jp/#about): 承継の経緯と企業理念
+- [事業内容](https://livnexus.co.jp/#business): 食品卸・水産卸・商社機能の詳細
+- [私たちの強み](https://livnexus.co.jp/#strength): 調達力・提案力・流通ネットワーク・成長戦略
+- [成長ビジョン](https://livnexus.co.jp/#vision): 地域→広域→全国への拡張構想
+- [会社情報](https://livnexus.co.jp/#company): 役員・所在地・会社概要
+- [お問い合わせ](https://livnexus.co.jp/#contact): 食品卸・水産卸・仕入・事業提携の相談窓口
+- [よくあるご質問](https://livnexus.co.jp/#faq): リブネクサスとは／承継の経緯／取扱商品／所在地
+- [名古屋・愛知の食品卸](https://livnexus.co.jp/food-wholesale.html): 三河屋物産カンパニーの食品卸詳細
+- [名古屋・愛知の水産卸](https://livnexus.co.jp/seafood-wholesale.html): ヤマツ水産卸カンパニーの水産卸詳細
+- [コラム：次世代商社とは](https://livnexus.co.jp/column/next-gen-shosha.html): 次世代商社の解説記事
+
+## 関連リソース
+
+- [sitemap.xml](https://livnexus.co.jp/sitemap.xml)
+- [robots.txt](https://livnexus.co.jp/robots.txt)

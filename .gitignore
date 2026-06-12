@@ -10,6 +10,10 @@
 # production
 /build
 
+# tailwind build tooling (standalone CLI / レンダリング用ラッパー)
+/_build/tailwindcss.exe
+/_build/*.html
+
 # misc
 .DS_Store
 *.pem

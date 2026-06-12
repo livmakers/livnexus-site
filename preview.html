@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>リブネクサス株式会社｜食品卸・水産卸・商社機能で商流をつなぐ</title>
 <meta name="description" content="リブネクサス株式会社は、旧三河屋物産と旧ヤマツ水産卸株式会社の機能を受け継ぎ、食品卸・水産卸を中心に、産地・商品・取引先・消費者をつなぐ商社機能を担う企業です。" />
-<meta name="keywords" content="リブネクサス, 食品卸, 水産卸, 三河屋物産, ヤマツ水産卸, 豊橋魚市場, 商社, 業務用食材, 愛知県小牧市" />
 <meta name="theme-color" content="#EAF3FB" />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<!-- 開発用プレビュー：検索対象外（正規ページは index.html） -->
+<meta name="robots" content="noindex, nofollow" />
 <meta name="author" content="リブネクサス株式会社" />
 <link rel="canonical" href="https://livnexus.co.jp/" />
 <link rel="alternate" hreflang="ja" href="https://livnexus.co.jp/" />
@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://livnexus.co.jp/" />
 <meta property="og:title" content="リブネクサス株式会社｜つなぐ力で、商流を進化させる。" />
 <meta property="og:description" content="食品卸・水産卸を核に、産地・商品・取引先・消費者をつなぐ次世代の商社機能。Connecting Markets. Creating New Value." />
-<meta property="og:image" content="https://livnexus.co.jp/og.svg" />
+<meta property="og:image" content="https://livnexus.co.jp/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="リブネクサス株式会社｜つなぐ力で、商流を進化させる。" />
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="リブネクサス株式会社｜つなぐ力で、商流を進化させる。" />
 <meta name="twitter:description" content="食品卸・水産卸を核に、産地・商品・取引先・消費者をつなぐ次世代の商社機能。" />
-<meta name="twitter:image" content="https://livnexus.co.jp/og.svg" />
+<meta name="twitter:image" content="https://livnexus.co.jp/og.png" />
 <!-- 構造化データ（Schema.org / Organization） -->
 <script type="application/ld+json">
 {
@@ -38,8 +38,8 @@
   "name": "リブネクサス株式会社",
   "alternateName": "LIV nexus Co., Ltd.",
   "url": "https://livnexus.co.jp/",
-  "logo": "https://livnexus.co.jp/favicon.svg",
-  "image": "https://livnexus.co.jp/og.svg",
+  "logo": "https://livnexus.co.jp/logo.png",
+  "image": "https://livnexus.co.jp/og.png",
   "description": "リブネクサス株式会社は、旧三河屋物産と旧ヤマツ水産卸株式会社の機能を受け継ぎ、食品卸・水産卸を中心に、グループ各社と連携した商社機能を担う企業です。",
   "foundingDate": "2004-12-24",
   "telephone": "+81-568-71-3201",
@@ -64,45 +64,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700;800&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          paper:  '#EFF5FB',
-          ink:    '#0B2440',
-          slate:  '#3C4D63',
-          muted:  '#5A6B82',
-          line:   '#DCE7F2',
-          sky:    { DEFAULT:'#0EA5E9', soft:'#7DD3FC', deep:'#0369A1' },
-          ocean:  '#2563EB',
-          teal:   '#0D9488',
-          green:  '#16A34A',
-          sun:    '#F59E0B',
-          navy:   '#0B2440',
-        },
-        fontFamily: {
-          sans:  ['Inter','Noto Sans JP','sans-serif'],
-          jp:    ['Noto Sans JP','sans-serif'],
-          mincho:['Shippori Mincho','serif'],
-        },
-        maxWidth: { content: '1200px' },
-        keyframes: {
-          'gradient-x': { '0%,100%':{ backgroundPosition:'0% 50%' }, '50%':{ backgroundPosition:'100% 50%' } },
-          marquee: { '0%':{ transform:'translateX(0)' }, '100%':{ transform:'translateX(-50%)' } },
-          float: { '0%,100%':{ transform:'translateY(0)' }, '50%':{ transform:'translateY(-10px)' } },
-        },
-        animation: {
-          'gradient-x':'gradient-x 6s ease infinite',
-          marquee:'marquee 30s linear infinite',
-          float:'float 6s ease-in-out infinite',
-        },
-      }
-    }
-  }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/tailwind.css" />
 <style>
   html { scroll-behavior: smooth; }
   body { background:#EFF5FB; color:#3C4D63; -webkit-font-smoothing:antialiased; }
