@@ -12,9 +12,9 @@ export const COMPANY = {
   name: "リブネクサス株式会社",
   nameEn: "LIV nexus Co., Ltd.", // 英字表記は LIV を大文字・nexus を小文字
   nameShort: "LIV nexus",
-  tel: "0568-713201",
+  tel: "0568-71-3033",
   postal: "485-0016",
-  address: "愛知県小牧市間々原新田下新池987",
+  address: "愛知県小牧市大字間々原新田字下新池987番地",
   established: "2004年12月24日（平成16年12月24日）",
   contactEmail: "satou.nobuhiro.bhd@gmail.com", // 問い合わせフォームの送信先
   business:
@@ -43,7 +43,7 @@ export const OFFICERS = [
 
 /** 事業所 */
 export const OFFICES = [
-  { label: "本社", value: "〒485-0016 愛知県小牧市間々原新田下新池987" },
+  { label: "本社", value: "〒485-0016 愛知県小牧市大字間々原新田字下新池987番地" },
   { label: "東京本社", value: "〒166-0004 東京都杉並区阿佐谷南3-1-27（株式会社タナカ産業ビル内）" },
   {
     label: "ヤマツ水産卸カンパニー本部",
