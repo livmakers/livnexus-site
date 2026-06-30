@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://livnexus.co.jp/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://livnexus.co.jp/food-wholesale.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://livnexus.co.jp/seafood-wholesale.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://livnexus.co.jp/column/next-gen-shosha.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://livnexus.co.jp/guide/fw-nagoya-foodservice.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/fw-komaki-foodservice.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/fw-bundle-packaging.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/fw-aichi-frozen.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/sf-toyohashi-fresh.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/sf-nagoya-restaurant.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/sf-aichi-frozen.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/sf-processed.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/sf-supermarket.html</loc></url>
+  <url><loc>https://livnexus.co.jp/guide/cross-onestop.html</loc></url>
 </urlset>
